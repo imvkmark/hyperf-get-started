@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 /**
  * This file is part of Hyperf.
  *
@@ -9,18 +9,52 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
+
 namespace App\Controller;
+
+use App\Annotation\AnClass;
+use App\Annotation\AnMethod;
+use App\Annotation\AnProperty;
+use App\Service\AnClass\ClassQ;
+use App\Service\Annotation\MethodAllIn;
+use Hyperf\Di\Annotation\AnnotationCollector;
+use Roave\BetterReflection\BetterReflection;
 
 class IndexController extends AbstractController
 {
     public function index()
     {
-        $user = $this->request->input('user', 'Hyperf');
+        $user   = $this->request->input('user', 'Hyperf');
         $method = $this->request->getMethod();
 
+        $classes = AnnotationCollector::getClassesByAnnotation(AnClass::class);
+        var_dump($classes);
+        $property = AnnotationCollector::getPropertiesByAnnotation(AnProperty::class);
+        var_dump($property);
+        $property = AnnotationCollector::getMethodsByAnnotation(AnMethod::class);
+        var_dump($property);
+        $property = AnnotationCollector::getClassMethodAnnotation(MethodAllIn::class, 'allin');
+        var_dump($property);
+
+        $pro    = (new MethodAllIn());
+        $result = $pro->allin();
+        var_dump($result);
+
         return [
-            'method' => $method,
+            'method'  => $method,
             'message' => "Hello {$user}.",
         ];
+    }
+
+    public function ref()
+    {
+        $ref   = (new BetterReflection())->classReflector()->reflect(ClassQ::class);
+        $const = $ref->getImmediateProperties();
+        foreach ($const as $con) {
+            if ($con->getType()) {
+                var_dump($con->getName());
+            }
+
+        }
     }
 }
