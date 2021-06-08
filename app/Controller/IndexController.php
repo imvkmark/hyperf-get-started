@@ -15,6 +15,7 @@ namespace App\Controller;
 use App\Annotation\AnClass;
 use App\Annotation\AnMethod;
 use App\Annotation\AnProperty;
+use App\Service\AnAspect\AspectQ;
 use App\Service\AnClass\ClassQ;
 use App\Service\Annotation\MethodAllIn;
 use Hyperf\Di\Annotation\AnnotationCollector;
@@ -54,7 +55,17 @@ class IndexController extends AbstractController
             if ($con->getType()) {
                 var_dump($con->getName());
             }
-
         }
+    }
+
+    /**
+     * 切面的示例
+     * @return string
+     */
+    public function aspect()
+    {
+        $content = (new AspectQ())->do() . PHP_EOL;
+        $content .= (new AspectQ())->go();
+        return $content;
     }
 }
