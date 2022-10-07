@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 /**
  * This file is part of Hyperf.
  *
@@ -10,7 +10,7 @@ declare(strict_types = 1);
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
 
-namespace App\Controller;
+namespace App\Controller\Http;
 
 use App\Annotation\AnClass;
 use App\Annotation\AnMethod;
@@ -21,7 +21,7 @@ use App\Service\Annotation\MethodAllIn;
 use Hyperf\Di\Annotation\AnnotationCollector;
 use Roave\BetterReflection\BetterReflection;
 
-class IndexController extends AbstractController
+class FeatController extends AbstractController
 {
     public function index()
     {

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 /**
  * This file is part of Hyperf.
@@ -13,9 +13,9 @@ declare(strict_types = 1);
 
 use Hyperf\HttpServer\Router\Router;
 
-Router::addRoute(['GET', 'POST', 'HEAD'], '/', 'App\Controller\IndexController@index');
-Router::addRoute(['GET', 'POST', 'HEAD'], '/ref', 'App\Controller\IndexController@ref');
-Router::addRoute(['GET', 'POST', 'HEAD'], '/aspect', 'App\Controller\IndexController@aspect');
+Router::addRoute(['GET', 'POST', 'HEAD'], '/feat', 'App\Controller\Http\FeatController@index');
+Router::addRoute(['GET', 'POST', 'HEAD'], '/feat/ref', 'App\Controller\Http\FeatController@ref');
+Router::addRoute(['GET', 'POST', 'HEAD'], '/feat/aspect', 'App\Controller\Http\FeatController@aspect');
 
 Router::get('/favicon.ico', function () {
     return '';
