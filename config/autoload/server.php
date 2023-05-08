@@ -29,11 +29,23 @@ return [
                 Event::ON_REQUEST => [Hyperf\HttpServer\Server::class, 'onRequest'],
             ],
         ],
+
+        // 支持多端口, 多端口使用注解来定义路由
+        [
+            'name'      => 'anotherHttp',
+            'type'      => Server::SERVER_HTTP,
+            'host'      => '0.0.0.0',
+            'port'      => 9502,
+            'sock_type' => SWOOLE_SOCK_TCP,
+            'callbacks' => [
+                Event::ON_REQUEST => ['AnotherHttp', 'onRequest'],
+            ],
+        ],
         [
             'name'      => 'ws',
             'type'      => ServerInterface::SERVER_WEBSOCKET,
             'host'      => '0.0.0.0',
-            'port'      => 9502,
+            'port'      => 9510,
             'sock_type' => SWOOLE_SOCK_TCP,
             'callbacks' => [
                 Event::ON_HAND_SHAKE => [Hyperf\WebSocketServer\Server::class, 'onHandShake'],

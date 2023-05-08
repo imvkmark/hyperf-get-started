@@ -12,3 +12,8 @@ vendor/
 .phpunit*
 *.cache
 composer.lock
+
+# vitepress
+#---------------------
+node_modules/
+pnpm-lock.yaml

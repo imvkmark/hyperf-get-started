@@ -6,19 +6,17 @@ namespace App\Controller\Http;
 
 use Hyperf\HttpServer\Annotation\Controller;
 use Hyperf\HttpServer\Annotation\RequestMapping;
-use Hyperf\HttpServer\Contract\RequestInterface;
 
 /**
- * @Controller()
+ * @Controller(prefix="order")
  */
 class OrderController extends AbstractController
 {
     /**
      * @RequestMapping(path="home",methods="get")
      */
-    public function index(RequestInterface $request)
+    public function index()
     {
-        $id = $request->input('id');
-        return 'home-' . $id;
+        return 'home-' . $this->request->input('id');
     }
 }
