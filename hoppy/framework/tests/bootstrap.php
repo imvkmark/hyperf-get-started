@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 /**
  * This file is part of Hyperf.
  *
@@ -9,10 +9,4 @@ declare(strict_types = 1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-return [
-    'handler' => [
-        'http' => [
-            Hoppy\Framework\Http\Exception\Handler::class,
-        ],
-    ],
-];
+require_once dirname(__FILE__, 2) . '/vendor/autoload.php';

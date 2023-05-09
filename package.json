@@ -1,0 +1,38 @@
+{
+    "private": true,
+    "scripts": {
+        "development": "mix",
+        "hot": "mix watch --hot",
+        "production": "mix --production",
+        "prepare": "husky install resources/.husky"
+    },
+    "apidoc": {
+        "title": "Hoppy 接口文档",
+        "url": "{{domain}}/",
+        "version": "1.0.0",
+        "sampleUrl": false
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ],
+        "rules": {
+            "type-enum": [
+                2,
+                "always",
+                [
+                    "bug",
+                    "feat",
+                    "fix",
+                    "docs",
+                    "style",
+                    "refactor",
+                    "test",
+                    "chore",
+                    "revert",
+                    "merge"
+                ]
+            ]
+        }
+    }
+}

@@ -10,9 +10,7 @@ declare(strict_types = 1);
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
 return [
-    'handler' => [
-        'http' => [
-            Hoppy\Framework\Http\Exception\Handler::class,
-        ],
-    ],
+    'locale'          => 'zh_CN',
+    'fallback_locale' => 'en',
+    'path'            => BASE_PATH . '/storage/languages',
 ];

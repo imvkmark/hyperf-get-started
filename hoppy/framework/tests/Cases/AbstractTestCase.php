@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 /**
  * This file is part of Hyperf.
  *
@@ -9,10 +9,13 @@ declare(strict_types = 1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-return [
-    'handler' => [
-        'http' => [
-            Hoppy\Framework\Http\Exception\Handler::class,
-        ],
-    ],
-];
+namespace Hoppy\Framework\Tests\Cases;
+
+use PHPUnit\Framework\TestCase;
+
+/**
+ * Class AbstractTestCase.
+ */
+abstract class AbstractTestCase extends TestCase
+{
+}

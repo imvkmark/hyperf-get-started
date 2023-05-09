@@ -13,9 +13,13 @@
     "license": "Apache-2.0",
     "require": {
         "php": ">=7.4",
+        "hoppy/framework": "dev-master",
+        "hyperf/async-queue": "~2.2.0",
         "hyperf/cache": "~2.2.0",
         "hyperf/command": "~2.2.0",
         "hyperf/config": "~2.2.0",
+        "hyperf/constants": "~2.2.0",
+        "hyperf/database": "~2.2.0",
         "hyperf/db-connection": "~2.2.0",
         "hyperf/framework": "~2.2.0",
         "hyperf/guzzle": "~2.2.0",
@@ -23,11 +27,11 @@
         "hyperf/logger": "~2.2.0",
         "hyperf/memory": "~2.2.0",
         "hyperf/process": "~2.2.0",
-        "hyperf/database": "~2.2.0",
-        "hyperf/websocket-server": "~2.2.0",
         "hyperf/redis": "~2.2.0",
-        "hyperf/constants": "~2.2.0",
-        "hyperf/async-queue": "~2.2.0"
+        "hyperf/translation": "~2.2.0",
+        "hyperf/validation": "^2.2",
+        "hyperf/websocket-server": "~2.2.0",
+        "roave/better-reflection": "^4.12"
     },
     "require-dev": {
         "swoole/ide-helper": "^4.5",
@@ -53,7 +57,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "HyperfTest\\": "./test/"
+            "HyperfTest\\": "./test/",
+            "Hoppy\\Framework\\Tests\\": "hoppy/framework/tests"
         }
     },
     "minimum-stability": "dev",
@@ -63,6 +68,12 @@
         "sort-packages": true
     },
     "extra": [],
+    "repositories": {
+        "hoppy": {
+            "type": "path",
+            "url": "./hoppy/*"
+        }
+    },
     "scripts": {
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""

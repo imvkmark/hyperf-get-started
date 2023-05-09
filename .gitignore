@@ -13,7 +13,6 @@ vendor/
 *.cache
 composer.lock
 
-# vitepress
+# poppy
 #---------------------
-node_modules/
-pnpm-lock.yaml
+storage/docs/
