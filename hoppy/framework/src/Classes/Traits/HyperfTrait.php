@@ -6,6 +6,7 @@ namespace Hoppy\Framework\Classes\Traits;
 
 use Hyperf\Contract\StdoutLoggerInterface;
 use Hyperf\Utils\ApplicationContext;
+use Hyperf\Utils\Filesystem\Filesystem;
 use Hyperf\Validation\Contract\ValidatorFactoryInterface;
 use Psr\Container\ContainerInterface;
 
@@ -28,5 +29,10 @@ trait HyperfTrait
     public function validator(): ValidatorFactoryInterface
     {
         return $this->container()->get(ValidatorFactoryInterface::class);
+    }
+
+    public function files(): Filesystem
+    {
+        return $this->container()->get(Filesystem::class);
     }
 }

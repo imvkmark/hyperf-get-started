@@ -22,7 +22,7 @@
         "hyperf/database": "~2.2.0",
         "hyperf/db-connection": "~2.2.0",
         "hyperf/framework": "~2.2.0",
-        "hyperf/guzzle": "~2.2.0",
+        "hyperf/guzzle": "^2.2",
         "hyperf/http-server": "~2.2.0",
         "hyperf/logger": "~2.2.0",
         "hyperf/memory": "~2.2.0",
@@ -31,7 +31,8 @@
         "hyperf/translation": "~2.2.0",
         "hyperf/validation": "^2.2",
         "hyperf/websocket-server": "~2.2.0",
-        "roave/better-reflection": "^4.12"
+        "roave/better-reflection": "^4.12",
+        "ext-json": "Required to use JSON."
     },
     "require-dev": {
         "swoole/ide-helper": "^4.5",
@@ -44,7 +45,6 @@
     },
     "suggest": {
         "ext-openssl": "Required to use HTTPS.",
-        "ext-json": "Required to use JSON.",
         "ext-pdo": "Required to use MySQL Client.",
         "ext-pdo_mysql": "Required to use MySQL Client.",
         "ext-redis": "Required to use Redis Client."

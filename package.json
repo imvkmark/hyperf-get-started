@@ -1,11 +1,5 @@
 {
     "private": true,
-    "scripts": {
-        "development": "mix",
-        "hot": "mix watch --hot",
-        "production": "mix --production",
-        "prepare": "husky install resources/.husky"
-    },
     "apidoc": {
         "title": "Hoppy 接口文档",
         "url": "{{domain}}/",
